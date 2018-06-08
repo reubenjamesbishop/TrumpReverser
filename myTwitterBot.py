@@ -1,6 +1,6 @@
 import tweepy
 
-#I have my keys here...
+#Pretend these are my sneaky private keys
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -18,7 +18,6 @@ for follower in tweepy.Cursor(api.followers).items():
 #Get the tweet and reverse it
 tweetList = api.user_timeline(screen_name = 'realDonaldTrump', count = 1)
 tweet = tweetList[0]
-#tweet = str(tweet.full_text)
 tweet = str(tweet.text)
 print(tweet)
 reversedTweet = ''.join(reversed(tweet))
